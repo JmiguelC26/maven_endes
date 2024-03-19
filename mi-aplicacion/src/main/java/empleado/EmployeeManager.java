@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.javafaker.Faker;
+/**
+ * @version 1.0
+ * @author miguel
+ * Manger de empleados
+ */
 public class EmployeeManager {
 	
 private List<Employee> employees;
@@ -10,7 +15,12 @@ private List<Employee> employees;
 public EmployeeManager() {
         this.employees = new ArrayList<>();
     }
-	
+/**
+ * Añadir los empleados
+ * 
+ * @param name Nombre del empleado
+ * @param years Años en la empresa
+ */
 public void addEmployee(String name, int years) {
         Employee e1 = new Employee(name, years);
         employees.add(e1);
@@ -26,7 +36,7 @@ public void printEmployees() {
 }
 
 public static void main(String[] args) {
-	int total=100;
+	int total=25;
 	Faker faker = new Faker();
 	
         EmployeeManager manager = new EmployeeManager();
@@ -34,7 +44,7 @@ public static void main(String[] args) {
         manager.addEmployee("Jane Smith", 2);
         manager.printEmployees();
         for(int i=0;i<total;i++) {
-        	manager.addEmployee(faker.name().name(), faker.number().numberBetween(3, 80));
+        	manager.addEmployee(faker.name().name(), faker.number().numberBetween(3, 30));
         }
     }
 }
